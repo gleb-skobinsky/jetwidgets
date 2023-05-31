@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application") version "7.4.0"
     id("org.jetbrains.kotlin.android") version "1.8.0"
+    `maven-publish`
 }
 
 android {
@@ -31,9 +32,14 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.0"
     }
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
-
-val filamentVersion = "1.8.1"
 
 dependencies {
     implementation("androidx.activity:activity-compose:1.7.2")
@@ -42,4 +48,18 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling:1.4.3")
     implementation("androidx.compose.ui:ui-tooling-preview:1.4.3")
     implementation("androidx.appcompat:appcompat:1.6.1")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                groupId = "com.jetwidgets"
+                artifactId = "jetwidgets"
+                version = "1.0"
+
+                from(components["release"])
+            }
+        }
+    }
 }
