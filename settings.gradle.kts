@@ -36,3 +36,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "jetwidgets"
 
+include(":jetwidgets")
