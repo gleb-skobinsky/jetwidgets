@@ -6,4 +6,8 @@
 
 As of now, the library only contains a button with an animated sine wave.
 
-https://github.com/gleb-skobinsky/jetwidgets/raw/master/screen-20230531-180624~2.mp4
+
+
+https://github.com/gleb-skobinsky/jetwidgets/assets/90451272/53b1bb26-20ef-4431-8265-42d4153f93ea
+
+
