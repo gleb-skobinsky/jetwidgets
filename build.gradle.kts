@@ -38,6 +38,11 @@ android {
             withSourcesJar()
             withJavadocJar()
         }
+        singleVariant("debug") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
     }
 }
 
@@ -53,12 +58,19 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("maven") {
+            create<MavenPublication>("mavenRelease") {
                 groupId = "com.jetwidgets"
                 artifactId = "jetwidgets"
                 version = "1.0"
 
                 from(components["release"])
+            }
+            create<MavenPublication>("mavenDebug") {
+                groupId = "com.jetwidgets"
+                artifactId = "jetwidgets"
+                version = "1.0"
+
+                from(components["debug"])
             }
         }
     }
