@@ -25,7 +25,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 @Composable
-fun App() {
+internal fun App() {
     Box(
         Modifier
             .fillMaxSize()
@@ -58,7 +58,7 @@ fun App() {
 val lightBlue = Color(173, 216, 230)
 
 @Composable
-private fun RecordingButton(
+fun RecordingButton(
     modifier: Modifier = Modifier,
     size: Dp = 24.dp,
     frequency: Int = 4,
@@ -112,7 +112,7 @@ private fun Boolean.toAnimationSpeed() = when (this) {
  * @param time The time value to be used to calculate the position of the wave.
  * @param frequency The number of times each wave wriggles.
  */
-fun Modifier.drawWaves(time: Float, frequency: Int) = drawBehind {
+private fun Modifier.drawWaves(time: Float, frequency: Int) = drawBehind {
     // Calculate the mean of bell curve and the distance between each wriggle on x-axis
     val mean = size.width / 2
     val pointsDistance = size.width / frequency
