@@ -38,3 +38,4 @@ rootProject.name = "jetwidgets"
 
 include(":jetwidgets")
 include(":JetWidgets")
+include(":demo")

@@ -25,7 +25,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 @Composable
-internal fun App() {
+fun App() {
     Box(
         Modifier
             .fillMaxSize()
