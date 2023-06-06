@@ -1,7 +1,6 @@
 package com.jetwidgets
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -32,21 +31,12 @@ fun App() {
         when (screenMode.value) {
             ScreenMode.SINE -> SineScreen()
             ScreenMode.SIRI -> {
-                Row(
-                    Modifier
-                        .align(Alignment.Center)
-                        .size(256.dp)
-                        .clip(RoundedCornerShape(50))
-                        .border(1.dp, Color.Red, RoundedCornerShape(50))
-                ) {
-
-                }
+                SiriButton()
             }
         }
 
     }
 }
-
 
 @Composable
 private fun BoxScope.SineScreen() {
