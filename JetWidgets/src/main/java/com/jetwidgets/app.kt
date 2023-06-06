@@ -29,7 +29,7 @@ fun App() {
         when (screenMode.value) {
             ScreenMode.SINE -> SineScreen()
             ScreenMode.SIRI -> {
-                SiriButton()
+                Siri(Modifier.align(Alignment.Center))
             }
         }
 
